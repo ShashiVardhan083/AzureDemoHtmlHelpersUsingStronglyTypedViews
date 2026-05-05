@@ -1,0 +1,72 @@
+﻿@model HtmlHelpersUsingStronglyTypedViews.Models.CreateViewModel;
+<div class="EntireContainer">
+	<h3 class="heading-text-center">Create Property</h3>
+
+	@using (Html.BeginForm("CreateProperty", "Property", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+		<div class="one-row">
+			@Html.HiddenFor(m => m.PropertyId)
+			<div class="field-class">
+				@Html.LabelFor(m => m.PropertyName)
+				@Html.TextBoxFor(m => m.PropertyName, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.PropertyName, "", new { @class = "text-danger" })<br /><br />
+			</div>
+
+			@Html.HiddenFor(m => m.OwnerId)
+			<div class="field-class">
+				@Html.LabelFor(m => m.OwnerName)
+				@Html.TextBoxFor(m => m.OwnerName, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.OwnerName, "", new { @class = "text-danger" })<br /><br />
+			</div>
+
+			<div class="field-class">
+				@Html.LabelFor(m => m.PropertyType)
+				@Html.DropDownListFor(
+				m => m.PropertyType, Model.PropertyTypeList, "-- select Property Type --", new { @class = "form-control" })
+			    @Html.ValidationMessageFor(m => m.PropertyType, "", new { @class = "text-danger" })<br /><br />
+		    </div>
+		</div>
+
+	    <div class="one-row">
+		
+
+		<div class="field-class">
+			@Html.LabelFor(m => m.BedroomCount)
+			@Html.TextBoxFor(m => m.BedroomCount, new { @class = "form-control" })<br /><br />
+		</div>
+
+		<div class="field-class">
+			@Html.LabelFor(m => m.BathroomCount)
+			@Html.TextBoxFor(m => m.BathroomCount, new { @class = "form-control" })<br /><br />
+		</div>
+
+		<div class="field-class">
+			@Html.LabelFor(m => m.BhkType)
+			@Html.DropDownListFor(
+						m => m.BhkType, Model.BhkTypeList, "-- select Bhk Type --", new { @class = "form-control" })<br /><br />
+		</div>
+	    </div>
+	<div class="one-row">
+		<div class="field-class price-field">
+			@Html.LabelFor(m => m.Price)
+			@Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })<br /><br />
+		</div>
+
+
+		<div class="field-class image-field">
+			@Html.LabelFor(m => m.ImageUrl)
+			<input asp-for="ImageUrl" type="file" multiple class="form-control" />
+			<span asp-validation-for="ImageUrl" class="text-danger"></span><br /><br />
+		</div>
+
+	</div>
+	
+
+	<div class="CreateButton">
+		<button Type="submit">Create Property</button>
+	</div>
+
+	}
+</div>
+

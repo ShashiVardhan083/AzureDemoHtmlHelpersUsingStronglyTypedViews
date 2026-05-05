@@ -1,0 +1,127 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+        
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/*    box-shadow: offset-x offset-y blur spread color;*/
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.text-danger {
+    color: red;
+}
+
+body {
+    background: linear-gradient(to right, #eef2f3, #dfe9f3);
+    margin: 0;
+    overflow: auto;
+}
+
+.EntireContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #dedede;
+    border-radius: 25px;
+    box-shadow: 8px 8px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: aqua;
+    transform: translateY(-5px);
+}
+
+.EntireContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.one-row {
+    display: flex;
+    overflow: hidden;
+    gap: 1.5rem;
+    /*overflow: scroll;*/ /* always shows scrollbar */
+    /*overflow: auto;*/ /* shows scrollbar only when needed */
+}
+
+.field-class {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-field
+{
+    flex: 1;
+}
+.image-field {
+    flex: 2;
+}
+    
+/*-----*/
+
+.show-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+.image-section {
+    flex: 1;
+}
+
+    .image-section img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+/* RIGHT SIDE */
+.details-section {
+    flex: 1;
+}
+
+    .details-section h2 {
+        margin-bottom: 20px;
+    }
+
+    .details-section p {
+        margin: 10px 0;
+        font-size: 16px;
+    }

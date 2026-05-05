@@ -1,0 +1,21 @@
+﻿@model HtmlHelpersUsingStronglyTypedViews.Models.CreateViewModel
+
+<div class="show-container">
+
+    <!-- LEFT: Image -->
+    <div class="image-section">
+        <img src="@ViewBag.ImagePath" alt="Property Image" />
+    </div>
+
+    <!-- RIGHT: Details -->
+    <div class="details-section">
+        <h2>@Model.PropertyName</h2>
+
+        <p><strong>Owner:</strong> @Model.OwnerName</p>
+        <p><strong>Price:</strong> ₹@Model.Price</p>
+        <p><strong>Property Type:</strong> @Model.PropertyType</p>
+        <p><strong>BHK Type:</strong> @Model.BhkType</p>
+        <p><strong>Bedrooms:</strong> @Model.BedroomCount</p>
+        <p><strong>Bathrooms:</strong> @Model.BathroomCount</p>
+    </div>
+</div>
