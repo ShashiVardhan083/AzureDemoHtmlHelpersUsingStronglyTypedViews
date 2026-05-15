@@ -16,18 +16,18 @@ jobs:
       contents: read #This is required for actions/checkout
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 #download repo into vm
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v4 #install sdk
         with:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release #build application
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp" #deployable application package #dll
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     runs-on: windows-latest
-    needs: build
+    needs: build #Deploy job waits for build job success
     permissions:
       id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
